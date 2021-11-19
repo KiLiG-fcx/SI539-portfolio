@@ -1,288 +1,361 @@
 body{
-    font-family: 'Sofia',serif;
-      background-color: black;
-      padding:0;
-    }
-  header{
-    display:flex;
-    flex-direction:column;
-    align-items: flex-start;
-    background-image: url('../pic/head.jpg');
-    background-size: 100%;
-    background-repeat: repeat;
-    opacity:1;
-  }
-
-  h2{
-    font-family: 'Sofia',serif;
-    color:black;
-    display: flex;
-    justify-content: center;
-  }
-
-  a{
-    font-family: 'Courier New', Courier, monospace;
-    color: 	wheat;
+    font-family: 'Sawarabi Mincho',serif;
     background-color: black;
-    opacity: 1;
-    
-  }
-  .list{
-    display:flex;
-    flex-direction: column;
-    align-items: flex-start;
+    padding:0;
+}
+
+/* fonts */
+h1{
+  font-family: 'Sofia',serif;
+  color:black;
+  margin:0;
+  font-size: 32px;
+}
+h2{
+  font-family: 'Sofia',serif;
+  color:black;
+  display: flex;
+  justify-content: center;
+}
+h3{
+  font-size:24px;
+}
+a{
+  font-family: 'Courier New', Courier, monospace;
+}
+/* fonts */
+
+/* navigation bar */
+ul{
+  list-style:none
+}
+ul a{
+  display: block;
+  text-decoration: none;
+  position:relative;
+  height:100%;
+  text-align: center;
+  color: thistle;
+  background-color: black;
   }
 
+.list{
+  display:block;
+  padding:0;
+  width:100%;
+}
+.list li:hover a{
+  background-color:thistle;
+  color:black;
+}
+/* navigation bar end */
+p{
+  /* intro text */
+  font-family: sans-serif;
+}
+.curr{
+  /* difference for current page */
+  font-weight:bolder;
+  text-decoration: underline;
+  color:wheat;
+  background-color: black;
+  padding:0;
+}
 
-  .all{
-    display:grid;
-    grid-template-columns: 200px 450px;
-    grid-template-rows:repeat(4,200px);
-    grid-row-gap: 15px;
-    grid-column-gap:0px;
-  }
+footer{
+  color:white;
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+  margin:10px;
+}
 
-  .lyp{
-    grid-row: 1/span 1;
-    grid-column: 1/span 1;
-  }
-  .lyp img{
-    width:200px;
-    height:200px;
-  }
-  .ly p{
-    color:black;
-  }
 
-  .ly{
-    grid-row: 1/span 1;
-    grid-column: 2/span 1;
-    background-image:url('../pic/ly_back.jpg');
-    background-size: 100%;
-    background-repeat: repeat;
-  }
-
-  .wdp{
-    grid-row: 2/span 1;
-    grid-column: 1/span 1;
-    
-  }
-  .wdp img{
-    width:200px;
-    height:200px;
-  }
-  .wd{
-    grid-row:2/span 1;
-    grid-column:2/span 1;
-    background-image: url('../pic/wd_back.jpg');
-    background-size: 100%;
-    
-    background-repeat: repeat;
-  }
-  .wd p{
-    color:black;
-  }
-
-  .gyp{
-    grid-row:3/span 1;
-    grid-column: 1/span 1;
-  }
-  .gyp img{
-    width:200px;
-    height:200px;
-  }
-
-  .gy{
-    grid-row: 3/span 1;
-    grid-column: 2/span 1;
-    background-image: url('../pic/gy_back.jpg');
-    background-size: 100%;
-    background-repeat: repeat;
-  }
-
-  .gy h2,p{
-    color:white;
-  }
-
-  .shp{
-    grid-row: 4/span 1;
-    grid-column: 1/span 1;
-  }
-  .shp img{
-    width:200px;
-    height:200px;
-  }
-
-  .sh{
-    grid-row:4/span 1;
-    grid-column: 2/span 1;
-    background-image: url('../pic/sh_back.jpg');
-    background-size: 100%;
-    background-repeat: repeat;
-  }
-
-  .sh h2,p{
-    color:white;
-  }
-  footer{
-    color:white;
+@media only screen and (min-width: 400px){
+  h1{
     text-align: center;
-    font-family: 'Times New Roman', Times, serif;
-    margin:10px;
+    padding: 20px;
+    background-image: url('../pic/main_title_back.jpg');
+    color:white;
+  }
+  h2{
+    margin: 8px;
+    font-size:28px;
+  }
+  .click_for_more{
+    font-family: 'Courier New', Courier, monospace;
+    font-weight:bold;
+    text-decoration: underline;
+    color:black;
   }
 
-  @media only screen and (max-width: 768px){
-    h1{
-      font-size: 32px;
-    }
-    h2{
-      font-family: 'Sofia',serif;
-      color:black;
-      display: flex;
-      justify-content: center;
-      margin: 8px;
-      font-size:28px;
-    }
-    .h3{
-      font-size:24px;
-    }
-   
-    #it1{
-      background:none;
-      font-weight: bold;
-      text-decoration: underline pink;
-    }
-    #it2{
-      background:none;
-      color:white;
-      font-weight: bold;
-      text-decoration: underline pink;
-    }
-
-    a{
-      font-family: 'Courier New', Courier, monospace;
-      color: 	black;
-      background-color: wheat;
-      text-decoration: none;
-      padding: 0;
-      
-    }
-    .list{
-      list-style: none;
-      padding:0;
-    }
-    p{
-      font-family: sans-serif;
-    }
-  
-    .all{
+/* main page view */
+    /* set grid */
+    .container{
       display:grid;
       grid-template-columns: 1fr 3fr;
       grid-template-rows:repeat(4,200px);
-      grid-row-gap: 15px;
     }
-    .curr{
-      font-weight:bolder;
-      text-decoration: underline;
-      color:wheat;
-      background-color: black;
-      padding:0;
-    }
-  
-    .lyp{
-      grid-row: 1/span 1;
-      grid-column: 1/span 1;
-      object-fit:cover;
-    }
-    .ly p{
-      color:black;
-      margin: 3px;
 
+    /* pictures */
+    .show_picture{
+      width:200px;
+      height:200px;
+      grid-column: 1/span 1;
     }
-  
+    #lyp{
+      grid-row: 1/span 1;
+    }
+    #wdp{
+      grid-row: 2/span 1;
+    }
+    #gyp{
+      grid-row:3/span 1;
+    }
+    #shp{
+      grid-row: 4/span 1;
+    }
+    /* end picture settings */
+
+    /* main page text settings */
+    .main_intro{
+      margin:8px;
+      grid-column:2/span 1;
+      background-repeat:repeat-y;
+      overflow: scroll;
+      color:black;
+      text-align: justify;
+    }
     .ly{
       grid-row: 1/span 1;
-      grid-column: 2/span 1;
-      background-image:url('../pic/ly_back.jpg');
-      background-size: 100%;
-      background-repeat: repeat;
-      overflow: scroll;
-    }
-  
-    .wdp{
-      grid-row: 2/span 1;
-      grid-column: 1/span 1;
-      max-height: 100px;
-      
+      background-image:url('../pic/ly/back.jpg');
     }
     .wd{
       grid-row:2/span 1;
-      grid-column:2/span 1;
-      background-image: url('../pic/wd_back.jpg');
-      background-size: 100%;
-      
-      background-repeat: repeat;
-      overflow: scroll;
+      background-image: url('../pic/wd/back.jpg');
     }
-    .wd p{
-      color:black;
-      margin: 3px;
-    }
-
-    .gyp{
-      grid-row:3/span 1;
-      grid-column: 1/span 1;
-    }
-
     .gy{
-      grid-row: 3/span 1;
-      grid-column: 2/span 1;
-      background-image: url('../pic/gy_back.jpg');
-      background-size: 100%;
-      background-repeat: repeat;
-      overflow: scroll;
+      grid-row:3/span 1;
+      background-image: url('../pic/gy/back.jpg');
     }
-
-    .gy h2{
-      color:white;
-    }
-    .gy p{
-      color:white;
-      margin:3px;
-
-    }
-
-    .shp{
-      grid-row: 4/span 1;
-      grid-column: 1/span 1;
-    }
-
     .sh{
       grid-row:4/span 1;
-      grid-column: 2/span 1;
-      background-image: url('../pic/sh_back.jpg');
-      background-size: 100%;
-      background-repeat: repeat;
-      overflow: scroll;
+      background-image: url('../pic/sh/back.jpg');
     }
-
-    .sh h2{
-      color:white;
-      margin:8px;
-    }
-
-    .sh p{
-      color:white;
-      margin:3px;
-
-    }
-  footer{
-    color:white;
-    text-align: center;
-    font-family: 'Times New Roman', Times, serif;
-    margin:10px;
-  }
-    
-
-  }
   
+  /* end grid setting */
+  /* end main page view */
+
+
+  /* ----------------------for internal pages---------------------------*/
+
+  /* general settings */
+  .bs,.cat{
+    /* background settings, category titles */
+    font-family: 'Great Vibes',serif;
+    color:black;
+    margin:20px 0 0 0;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius:0;
+    text-align: center;
+}
+
+.character{
+  /* character title */
+    margin-top: 20px;
+}
+
+#bs,#cat{
+  /* text settings for background settings and category */
+    color:black;
+    font-family: 'Arapey',serif;
+    margin:0;
+    border-top-left-radius: 0;
+    border-top-right-radius:0;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius:10px;
+    padding: 10px;
+    text-align: justify;
+   
+}
+#cat{
+  /* center text for category */
+    text-align: center;
+}
+
+.off_intro,.fan_intro,.character{
+    font-family: 'Arapey',serif;
+    color:black;
+    text-align: center;
+    margin-top:15px;
+    margin-bottom: 15px;
+}
+
+/* set for all the titles */
+.game_title{
+    color:black;
+    font-family: 'Dancing Script',sans-serif;
+    text-align: center;
+    background-size:100%;
+    background-image: url('../pic/wd/top.jpg');
+}
+/* end settings for all titles (4 in total) */
+/* end general settings */
+
+/* specific settings for each game */
+
+/* whole background settings */
+.whole_page{
+  /* general */
+  background-size: 100%;
+  background-repeat: repeat;
+}
+
+#lyzzr{
+    background-image: url('../pic/ly/back.jpg');
+}
+
+#wdsjb{
+  background-image: url('../pic/wd/back.jpg');
+}
+
+#gyyzl{
+  background-image: url('../pic/gy/back.jpg');
+}
+
+#hlr{
+  background-image: url('../pic/sh/back.jpg');
+}
+/* end whole background settings */
+
+/* person introduction (img+p)*/
+.lzy,.zr,.charlie,.sl{
+  /*general*/
+    display:grid;
+    grid-template-columns: 1fr 2.5fr;
+    grid-template-rows: 250px;
+    margin: 10px 0 10px 0;
+}
+
+#lzyp,#zrp,#chp,#slp{
+  /* pictures */
+    grid-column: 1/span 1;
+    grid-row: 1/ span 1;
+    width:250px;
+    height:250px;
+    border-radius: 10px;
+}
+
+#lzy,#zr,#charlie,#sl{
+  /*text*/
+    grid-column: 2/span 1;
+    grid-row:1/ span 1;
+    padding:10px;
+    margin:0;
+    font-family: 'Arapey',serif;
+    color:black;
+    overflow: scroll;
+    text-align: justify;
+}
+
+.official_pictures img{
+    display:flex;
+    flex-direction: column;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    max-width:400px;
+}
+
+#zr_official img{
+  /* why miHoyo likes landscape view?? */
+  max-width:500px;
+}
+
+.fan_pictures img{
+  display:flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-width:400px;
+  border-radius: 10px;
+  object-fit: cover;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+
+.fan_pictures p{
+  color:black;
+  font-family: 'Times New Roman', Times, serif;
+  margin:15px 0 15px 0;
+  text-align: center;
+}
+}
+
+/*tablet view */
+@media only screen and (min-width: 768px){
+  /* main page view */
+    /* set grid */
+    a{
+      font-size:18px;
+    }
+    .container{
+      display:grid;
+      grid-template-columns: 1fr 3fr;
+      grid-template-rows:repeat(4,400px);
+    }
+
+    /* pictures */
+    .show_picture{
+      width:400px;
+      height:400px;
+      grid-column: 1/span 1;
+    }
+    #lyp{
+      grid-row: 1/span 1;
+    }
+    #wdp{
+      grid-row: 2/span 1;
+    }
+    #gyp{
+      grid-row:3/span 1;
+    }
+    #shp{
+      grid-row: 4/span 1;
+    }
+    /* end picture settings */
+
+    /* main page text settings */
+    .main_intro{
+      margin:3px;
+      grid-column:2/span 1;
+      background-repeat:repeat-y;
+      overflow: scroll;
+      color:black;
+      width:100%;
+    }
+    .ly{
+      grid-row: 1/span 1;
+      background-image:url('../pic/ly/back.jpg');
+    }
+    .wd{
+      grid-row:2/span 1;
+      background-image: url('../pic/wd/back.jpg');
+    }
+    .gy{
+      grid-row:3/span 1;
+      background-image: url('../pic/gy/back.jpg');
+    }
+    .sh{
+      grid-row:4/span 1;
+      background-image: url('../pic/sh/back.jpg');
+    }
+  
+  /* end grid setting */
+  /* end main page view */
+}
