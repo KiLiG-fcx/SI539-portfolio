@@ -23,6 +23,22 @@ h3{
 a{
   font-family: 'Courier New', Courier, monospace;
 }
+.skip{
+  display:block;
+  text-align: center;
+  font-size: 18px;
+  color:black;
+}
+
+.skip:visited{
+  color:black;
+}
+#skip_main{
+  color:white;
+}
+#skip_main:visited{
+  color:white;
+}
 /* fonts */
 
 /* navigation bar */
@@ -110,61 +126,56 @@ p{
 .ly{
   grid-row: 1/span 1;
   background-image:url('../pic/ly/back.jpg');
+  z-index:1;
 }
 .wd{
   grid-row:2/span 1;
   background-image: url('../pic/wd/back.jpg');
+  z-index:2;
 }
 .gy{
   grid-row:3/span 1;
   background-image: url('../pic/gy/back.jpg');
+  z-index:3;
 }
 .sh{
   grid-row:4/span 1;
   background-image: url('../pic/sh/back.jpg');
+  z-index:4;
 }
+/* end main page text & its background settings */
+/* ----------end main page grid-------- */
 
-/* end grid */
-
-.official_pictures img{
-  display:flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  border-radius: 10px;
-}
-
-/* whole background settings */
+/* --------settings for 4 internal pages----------- */
+/*1. titles and whole background*/
+/* 1.1 background */
 .whole_page{
-  /* general */
+  /* backgrounds */
   background-size: 100%;
   background-repeat: repeat;
 }
-
 #lyzzr{
     background-image: url('../pic/ly/back.jpg');
 }
-
 #wdsjb{
   background-image: url('../pic/wd/back.jpg');
 }
-
 #gyyzl{
   background-image: url('../pic/gy/back.jpg');
 }
-
 #hlr{
   background-image: url('../pic/sh/back.jpg');
 }
-/* end whole background settings */
 
-
-/* internal page character settings */
-.character{
-  /* character title */
-    margin-top: 20px;
+/* 1.2 titles */
+.game_title{
+  /* game name titles */
+  color:black;
+  font-family: 'Dancing Script',sans-serif;
+  text-align: center;
+  background-size:100%;
+  background-image: url('../pic/wd/top.jpg');
 }
-
 .bs,.cat{
   /* background settings, category titles */
   font-family: 'Great Vibes',serif;
@@ -176,9 +187,20 @@ p{
   border-bottom-right-radius:0;
   text-align: center;
 }
+.off_intro,.fan_intro,.character{
+  /*character title, picture titles */
+  font-family: 'Arapey',serif;
+  color:black;
+  text-align: center;
+  margin-top:15px;
+  margin-bottom: 15px;
+}
 
+/* end main titles and background */
+
+/* 2. text info under the titles */
 #bs,#cat{
-  /* 4. text settings for background settings and category main text*/
+  /* 2.1. text settings for background settings and category main text*/
     color:black;
     font-family: 'Arapey',serif;
     margin:0;
@@ -191,27 +213,72 @@ p{
 }
 
 #cat{
-  /* 5. center text for category */
+  /* 2.1.1 center text for category */
     text-align: center;
 }
+ /* end text editing*/
 
-.character_info{
-  /* 1. infomatoin grid */
+ /* 3. character (grid) */
+ .character_info{
+  /* infomatoin grid */
   display:grid;
   grid-template-columns: 1fr 2.5fr;
   grid-template-rows: 250px;
   margin: 10px 0 10px 0;
 }
-
-.character_text{
-  /* 2.information text 1 for all views */
-  grid-column:2/span 1;
-}
-
 .character_photo{
-  /* 3. character photos for all views */
+  /* character photos for all views */
   grid-column:1/span 1;
+  grid-row:1/span 1;
+  width:250px;
+  height:250px;
+  border-radius: 10px;
 }
+#zr_official img{
+  /* why miHoyo likes landscape view?? */
+  max-width:500px;
+}
+.character_text{
+  /* information text 1 for all views */
+  grid-column:2/span 1;
+  grid-row: 1/span 1;
+  padding:10px;
+  margin:0;
+  font-family: 'Arapey',serif;
+  color:black;
+  overflow: scroll;
+  text-align: justify;
+}
+/* end character settings */
+
+/* 4. additional picture settings */
+.official_pictures img{
+  /* 4.1 official picture setttings */
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  border-radius: 10px;
+  max-width: 200px;
+}
+.fan_pictures img{
+  /* 4.2 fan pictures setting */
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width:400px;
+  border-radius: 10px;
+  object-fit: cover;
+  margin: 10px auto 10px auto;
+}
+.fan_pictures p{
+  /* 4.3 fan picture text */
+  color:black;
+  font-family: 'Times New Roman', Times, serif;
+  text-align: center;
+  padding:10px;
+}
+/* end additional pictures */
 
 footer{
   color:white;
@@ -238,88 +305,16 @@ footer{
     margin: 8px;
     font-size:18px;
   }
-
   /* end font settings for mobile */
 
   /* ----------------------for internal pages---------------------------*/
-
   /* general settings */
-
-
-
-.off_intro,.fan_intro,.character{
-    font-family: 'Arapey',serif;
-    color:black;
-    text-align: center;
-    margin-top:15px;
-    margin-bottom: 15px;
-}
-
-/* set for all the titles */
-.game_title{
-    color:black;
-    font-family: 'Dancing Script',sans-serif;
-    text-align: center;
-    background-size:100%;
-    background-image: url('../pic/wd/top.jpg');
-}
-/* end settings for all titles (4 in total) */
-/* end general settings */
-
-/* specific settings for each game */
-/* person introduction (img+p)*/
-
-#lzyp,#zrp,#chp,#slp{
-  /* pictures */
-    grid-column: 1/span 1;
-    grid-row: 1/ span 1;
-    width:250px;
-    height:250px;
-    border-radius: 10px;
-}
-
-#lzy,#zr,#charlie,#sl{
-  /*text*/
-    grid-column: 2/span 1;
-    grid-row:1/ span 1;
-    padding:10px;
-    margin:0;
-    font-family: 'Arapey',serif;
-    color:black;
-    overflow: scroll;
-    text-align: justify;
-}
-
-.official_pictures img{
-  margin:15px auto 15px auto;
-  max-width:400px;
-  justify-content: center;
-}
-
-#zr_official img{
-  /* why miHoyo likes landscape view?? */
-  max-width:500px;
-}
-
-.fan_pictures img{
-  display:flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  max-width:400px;
-  border-radius: 10px;
-  object-fit: cover;
-  margin-left:auto;
-  margin-right:auto;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-.fan_pictures p{
-  color:black;
-  font-family: 'Times New Roman', Times, serif;
-  text-align: center;
-  padding:10px;
-}
+  .official_pictures img{
+    flex-direction: column;
+    margin:15px auto 15px auto;
+    max-width:350px;
+    justify-content: space-around;
+  }
 }
 
 /*------------------------------------tablet view----------------------------------------- */
@@ -330,12 +325,20 @@ footer{
       font-size:32px;
     }
     h2{
-      font-size:24px;
+      font-size:20px;
     }
     ul a{
       font-size:18px;
       color:white;
     }
+    .main_intro{
+      margin:10px;
+      font-size:18px;
+    }
+    .whole_page p{
+      font-size:18px;
+    }
+    /* end font editing */
 
     .container{
       /* change grid into 3 columns */
@@ -353,22 +356,12 @@ footer{
     }
 
     .tablet_picture{
+      /* display the new ohotos */
       display:block;
       height:300px;
       grid-column:3/span 1;
     }
-
-    .character_info{
-      display:grid;
-
-    }
-
-    .additional_text_tablet{
-      display:block;
-      font-size:18px;
-      grid-column:3/span 1;
-    }
-
+    /* add the pictures to the 3rd column */
     #ly_tablet_pic{
       grid-row:1/span 1;
     }
@@ -381,26 +374,40 @@ footer{
     #sh_tablet_pic{
       grid-row:4/span 1;
     }
+    /* end editing main page */
+
+ /*------internal page settings-------*/
+    .character_info{
+      /* 1.set the new chracter grid */
+      display:grid;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .additional_text_tablet{
+      /* add additional text */
+      margin:15px;
+      
+      display:block;
+      font-size:18px;
+      grid-column:3/span 1;
+    }
+    .setting_data_title{
+      margin:10px;
+      font-size:18px;
+      font-weight: bold;
+      text-align: center;
+    }
+    .setting_data{
+      overflow: scroll;
+      font-family:'Arapey',serif;
+    }
     /* end adding tablet pictures */
     /* end picture settings */
 
     /* main page text settings */
-    .main_intro{
-      margin:10px;
-      font-size:18px;
-    }
-
-    .whole_page p{
-      font-size:18px;
-    }
-    
     .official_pictures img{
-      flex-direction: row;
       margin:15px auto 15px auto;
       max-width:350px;
       justify-content: space-around;
     }
-  
-  /* end grid setting */
-  /* end main page view */
 }
