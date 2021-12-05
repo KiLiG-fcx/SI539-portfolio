@@ -644,26 +644,67 @@ footer{
 
 }
 @media screen and (prefers-reduced-motion: reduce) {
+  /* 1. reduce the flipcard animation */
   .flipcard1,.flipcard2,.flipcard3,.flipcard4{
     transition:none;
     -moz-transition: none;
 		-webkit-transition: none;
 		-o-transition: none;
   }
+  .flipcard1:hover .upper_side1{
+		-webkit-transform: none;
+		transform: none;
+	}
+  .flipcard2:hover .upper_side2{
+		-webkit-transform: none;
+		transform: none;
+	}
+  .flipcard3:hover .upper_side3{
+		-webkit-transform: none;
+		transform: none;
+	}
+  .flipcard4:hover .upper_side4{
+		-webkit-transform: none;
+		transform: none;
+	}
   .upper_side1, .upper_side2, .upper_side3,.upper_side4{
     -webkit-transform: none;
-		transform: none;
-		-webkit-transition:none;
-		transition: none;
-  }
-
-
-
-  .back_side1, .back_side2, .back_side3,.back_side4{
-		-webkit-transform: none;
 		transform: none;
 		-webkit-transition: none;
 		transition: none;
   }
-  /* back side rotate */
+  
+  .back_side1, .back_side2, .back_side3,.back_side4{
+    z-index: 500;
+		-webkit-transform: none;
+		transform: none;
+		/* -- transition is the magic sauce for animation -- */
+		-webkit-transition: none;
+		transition: none;
+  }
+  .flipcard1:hover .back_side1 {
+		z-index: 100;
+		-webkit-transform: none;
+		transform: none;
+	}
+  .flipcard2:hover .back_side2 {
+		z-index: 100;
+		-webkit-transform: none;
+		transform: none;
+	}
+  .flipcard3:hover .back_side3 {
+		z-index: 100;
+		-webkit-transform: none;
+		transform: none;
+	}
+  .flipcard4:hover .back_side4 {
+		z-index: 100;
+		-webkit-transform: none;
+		transform: none;
+	}
+  /* end flipcard animation */
+  /* reduce parallax image */
+  .parallax{
+    background-attachment:scroll;
+  }
  }
