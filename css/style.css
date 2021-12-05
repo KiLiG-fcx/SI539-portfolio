@@ -1,6 +1,6 @@
 body{
     font-family: 'Sawarabi Mincho',serif;
-    background-color: black;
+    background-color:whitesmoke;
     padding:0;
 }
 
@@ -29,7 +29,6 @@ a{
   font-size: 18px;
   color:black;
 }
-
 .skip:visited{
   color:black;
 }
@@ -39,7 +38,89 @@ a{
 #skip_main:visited{
   color:white;
 }
-/* fonts */
+/* end fonts */
+
+/* begin form settings */
+/* parallax image for form page in all views, in form html */
+.parallax {
+  /* The image used */
+  background-image: url("../pic/parallax.jpg");
+  /* Set a specific height */
+  min-height: 450px;
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: repeat-y;
+  background-size: contain;
+}
+.form_fill{
+  background-color:blanchedalmond;
+}
+.form_input{
+  font-size:18px;
+  color:black;
+  font-family: 'Arapey',serif;
+  padding:10px;
+}
+form {
+  border: 3px solid #f1f1f1;
+}
+span{
+  font-family: italic;
+  font-weight: bold;
+}
+
+textarea{
+  width: 100%;
+  height: 35vh;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+legend{ 
+  font-size: 125%;
+  font-style:italic;
+  text-transform: uppercase;
+  text-align: center;
+}
+label{
+  display: inline-block;
+  margin-right:10px;
+  width:15%;
+}
+input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+input:focus{
+  background-color: thistle;
+}
+input[type=submit] {
+  /* submit button */
+  background-color: #31103C;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+input[type=submit]:hover {
+  opacity: 0.75;
+}
+#score{
+  width:50%;
+  
+}
+
+/* end form style */
+/* end parallax image */
 
 /* navigation bar */
 ul{
@@ -78,7 +159,26 @@ p{
   padding:0;
 }
 
-/* --------set main page sgrid--------- */
+@keyframes title_ani{
+  /* animation for title*/
+from {
+  font-size: 10px;
+  opacity: 0;
+}
+ to{
+   font-size: 32px;
+   opacity: 1;
+ }
+}
+
+.main_title,.game_title{
+  /* set main title animation */
+  animation-name:title_ani;
+  animation-duration: 2s;
+  animation-timing-function:ease-out;
+}
+
+/* --------set main page grid--------- */
 .container{
   display:grid;
   grid-template-columns: 1fr 3fr;
@@ -94,7 +194,7 @@ p{
   color:black;
 }
 
-/* propoganda pictures (displayed for all) */
+/* 1. propoganda pictures (displayed for all) */
 .show_picture{
   width:200px;
   height:200px;
@@ -114,7 +214,7 @@ p{
 }
 /* end picture settings */
 
-/* main page text settings */
+/* 2. main page text settings */
 .main_intro{
   margin:8px;
   grid-column:2/span 1;
@@ -146,7 +246,11 @@ p{
 /* end main page text & its background settings */
 /* ----------end main page grid-------- */
 
-/* --------settings for 4 internal pages----------- */
+
+/* --------settings for internal pages----------- */
+.flip_container{
+  display:none;
+}
 /*1. titles and whole background*/
 /* 1.1 background */
 .whole_page{
@@ -179,12 +283,9 @@ p{
 .bs,.cat{
   /* background settings, category titles */
   font-family: 'Great Vibes',serif;
+  font-size:24px;
   color:black;
   margin:20px 0 0 0;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius:0;
   text-align: center;
 }
 .off_intro,.fan_intro,.character{
@@ -193,6 +294,7 @@ p{
   color:black;
   text-align: center;
   margin-top:15px;
+  font-weight: bold;
   margin-bottom: 15px;
 }
 
@@ -204,16 +306,12 @@ p{
     color:black;
     font-family: 'Arapey',serif;
     margin:0;
-    border-top-left-radius: 0;
-    border-top-right-radius:0;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius:10px;
     padding: 10px;
     text-align: justify;
 }
 
 #cat{
-  /* 2.1.1 center text for category */
+  /* center text for category */
     text-align: center;
 }
  /* end text editing*/
@@ -226,14 +324,15 @@ p{
   grid-template-rows: 250px;
   margin: 10px 0 10px 0;
 }
+
 .character_photo{
-  /* character photos for all views */
   grid-column:1/span 1;
   grid-row:1/span 1;
   width:250px;
   height:250px;
   border-radius: 10px;
 }
+
 #zr_official img{
   /* why miHoyo likes landscape view?? */
   max-width:500px;
@@ -252,19 +351,27 @@ p{
 /* end character settings */
 
 /* 4. additional picture settings */
-.official_pictures img{
-  /* 4.1 official picture setttings */
+
+.official_pictures{
+  /* 4.1 the flexbox container for official pictures*/
   display:flex;
   flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  border-radius: 10px;
-  max-width: 200px;
+  flex-wrap:wrap;
 }
+.official_pictures img{
+  /* official picture setttings */
+  justify-content: space-between;
+  border-radius: 10px;
+  max-width: 150px;
+  margin-top:10px;
+  margin-bottom: 10px;
+  object-fit: cover;
+}
+
 .fan_pictures img{
-  /* 4.2 fan pictures setting */
+  /* fan pictures setting */
   display:flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
   max-width:400px;
   border-radius: 10px;
@@ -272,7 +379,7 @@ p{
   margin: 10px auto 10px auto;
 }
 .fan_pictures p{
-  /* 4.3 fan picture text */
+  /* fan picture text */
   color:black;
   font-family: 'Times New Roman', Times, serif;
   text-align: center;
@@ -280,15 +387,16 @@ p{
 }
 /* end additional pictures */
 
+
 footer{
-  color:white;
+  color:black;
   text-align: center;
   font-family: 'Times New Roman', Times, serif;
   margin:10px;
 }
 
-/*------------------------------------mobile view-----------------------------------------*/
 
+/*----------------------------------------mobile view---------------------------------------------*/
 @media only screen and (min-width: 400px){
   .tablet_picture, .additional_text_tablet{
     /* do not show other pictures, or additional text */
@@ -311,9 +419,8 @@ footer{
   /* general settings */
   .official_pictures img{
     flex-direction: column;
-    margin:15px auto 15px auto;
     max-width:350px;
-    justify-content: space-around;
+    align-items: center;
   }
 }
 
@@ -356,7 +463,7 @@ footer{
     }
 
     .tablet_picture{
-      /* display the new ohotos */
+      /* display the new photos */
       display:block;
       height:300px;
       grid-column:3/span 1;
@@ -376,7 +483,7 @@ footer{
     }
     /* end editing main page */
 
- /*------internal page settings-------*/
+ /*----------------internal page settings--------------------*/
     .character_info{
       /* 1.set the new chracter grid */
       display:grid;
@@ -406,8 +513,157 @@ footer{
 
     /* main page text settings */
     .official_pictures img{
-      margin:15px auto 15px auto;
       max-width:350px;
-      justify-content: space-around;
+      flex-direction: row;
+      justify-content: space-evenly;
+      margin-left:auto;
+      margin-right:auto;
+      margin-top:15px;
+      margin-bottom: 15px;
     }
 }
+
+/*--------------------------------------------- PC view ----------------------------------------------*/
+@media only screen and (min-width: 1280px){
+  /* add flipcard */
+  .flip_container{
+    /* show the container for flipcard only on large screen */
+    display:flex;
+    position:relative;
+    justify-content: space-between;
+    animation:anmt;
+  }
+  @keyframes anmt{
+    
+  }
+  .flipcard1,.flipcard2,.flipcard3,.flipcard4{
+    /* two picture comtainer */
+    display:flex;
+    flex-direction: row;
+    flex-grow: 1;
+    flex-basis: 0;
+    position:relative;
+    transition: transform 1s;
+		-moz-transition: transform 1s;
+		-webkit-transition: transform 1s;
+		-o-transition: transform 1s;
+		transform-style: preserve-3d;
+		-webkit-transform-style: preserve-3d;
+		-moz-transform-style: preserve-3d;
+		-o-transform-style: preserve-3d;
+		-ms-transform-style: preserve-3d;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  }
+  .flip{
+    /* text style of title */
+    font-family: 'Arapey',serif;
+    color:black;
+    text-align: center;
+    margin-top:15px;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+
+  .upper_side1, .upper_side2, .upper_side3,.upper_side4{
+    backface-visibility:hidden;
+    z-index: 900 ;
+    -webkit-transform: rotateX(0) rotateY(0);
+		transform: rotateX(0) rotateY(0);
+		-webkit-transform-style: preserve-3d;
+		transform-style: preserve-3d;
+		-webkit-transition: all .6s ease-in-out;
+		transition: all .6s ease-in-out;
+  }
+
+  /* front side rotate */
+  .flipcard1:hover .upper_side1 {
+		z-index: 900;
+		-webkit-transform: rotateY(179deg);
+		transform: rotateY(179deg);
+	}
+  .flipcard2:hover .upper_side2 {
+		z-index: 900;
+		-webkit-transform: rotateY(179deg);
+		transform: rotateY(179deg);
+	}
+  .flipcard3:hover .upper_side3 {
+		z-index: 900;
+		-webkit-transform: rotateY(179deg);
+		transform: rotateY(179deg);
+	}
+  .flipcard4:hover .upper_side4 {
+		z-index: 900;
+		-webkit-transform: rotateY(179deg);
+		transform: rotateY(179deg);
+	}
+  /* end front side rotate */
+
+  .back_side1, .back_side2, .back_side3,.back_side4{
+    position:absolute;
+    backface-visibility:hidden;
+    z-index: 800;
+		-webkit-transform: rotateY(-179deg);
+		transform: rotateY(-179deg);
+		-webkit-transform-style: preserve-3d;
+		transform-style: preserve-3d;
+		/* -- transition is the magic sauce for animation -- */
+		-webkit-transition: all .6s ease-in-out;
+		transition: all .6s ease-in-out;
+  }
+  /* back side rotate */
+  .flipcard1:hover .back_side1 {
+		z-index: 1000;
+		-webkit-transform: rotateX(0) rotateY(0);
+		transform: rotateX(0) rotateY(0);
+	}
+  .flipcard2:hover .back_side2 {
+		z-index: 1000;
+		-webkit-transform: rotateX(0) rotateY(0);
+		transform: rotateX(0) rotateY(0);
+	}
+  .flipcard3:hover .back_side3 {
+		z-index: 1000;
+		-webkit-transform: rotateX(0) rotateY(0);
+		transform: rotateX(0) rotateY(0);
+	}
+  .flipcard4:hover .back_side4 {
+		z-index: 1000;
+		-webkit-transform: rotateX(0) rotateY(0);
+		transform: rotateX(0) rotateY(0);
+	}
+  /* end back side rotate */
+
+  .flip_container img{
+    /* flipcard img settings */
+    width:300px;
+    height:500px;
+    border-radius: 10px;
+    margin:10px;
+    object-fit: cover;
+  }
+
+}
+@media screen and (prefers-reduced-motion: reduce) {
+  .flipcard1,.flipcard2,.flipcard3,.flipcard4{
+    transition:none;
+    -moz-transition: none;
+		-webkit-transition: none;
+		-o-transition: none;
+  }
+  .upper_side1, .upper_side2, .upper_side3,.upper_side4{
+    -webkit-transform: none;
+		transform: none;
+		-webkit-transition:none;
+		transition: none;
+  }
+
+
+
+  .back_side1, .back_side2, .back_side3,.back_side4{
+		-webkit-transform: none;
+		transform: none;
+		-webkit-transition: none;
+		transition: none;
+  }
+  /* back side rotate */
+ }

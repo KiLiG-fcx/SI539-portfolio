@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="pic/ffq.jpg"/>
+  <link rel="stylesheet" type="text/css" href="css/html5reset.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Dancing+Script'>
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Great+Vibes'>
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Arapey'>
+  <title>Work form</title>
+</head>
+<body>
+    <header class="dropdown">
+        <ul class="list">
+          <li class="curr"><a href="index.html">Main Page</a></li>
+          <li class="qc"><a href="mrlove.html">Mr. Love: Queen's choice</a></li>
+          <li class="tot"><a href="tearsofthemis.html">Tears of Themis</a></li>
+          <li class="ln"><a href="lightandnight.html">Light and Night</a></li>
+          <li class="fat"><a href="foralltime.html">For All Time</a></li>
+          <li class="form"><a href="form.html">Form page</a></li>
+        </ul>
+      </header>
+      <main class="whole_page" id="forms">
+        <h1 class="game_title" id="game_title_form">
+          Contact form
+        </h1>
+        <div class="parallax"></div>
+        <div class="form_fill">
+          <form action="https://formspree.io/f/meqvbyze" method="POST">
+            <fieldset>
+              <legend>Information collection form</legend>
+              <section class="form_input">
+                <label for="name"> Name</label>
+                <br>
+                <input type="text" id="name" name="Full Name" placeholder="Enter Your Name" required="required">
+              </section>
+              <section class="form_input">
+                <label for="email"> Email</label>
+                <input type="email" id="email" name="Your email" placeholder="Enter your email" required="required">
+              </section>
+              <section class="form_input" >
+                <label for="phone">Phone Number</label><br>
+                <input type="tel" id="phone" name="phone number" placeholder="Format: 123-456-7890">
+              </section>
+              <section class="form_input">
+                <label for="score"> The pages are ... </label><br>
+                <span>Really bad</span>
+                <input id="score" name="score" type="range" min="0" max="10" step="1" required="required">
+                
+                <span>Perfect</span>
+              </section>
+              <section class="form_input">
+                <label for="mes">Leave A Message</label>
+                <textarea id="mes"></textarea>
+              </section>
+              <section class="form_input">
+                <span>Do you think the pictures are good looking?</span>
+                <input type="radio" id="yes" name="answer" value="1">
+                <label for="yes">Yes</label>
+                <br>
+                <input type="radio" id="alsoyes" name="answer" value="2">
+                <label for="alsoyes">Definitely yes</label>
+              </section>
+              <input type="submit" value="Submit!">
+            </fieldset>
+           </form>
+        </div>
+      </main>
+      <footer>
+        <div>
+          Created by Mingyu Li, 2021 <br>
+          Fan works from weibo & lofter.<br>
+          Personal lofter id: fangcunxin16.
+        </div>
+      </footer>
+ 
+</body>
+</html>
