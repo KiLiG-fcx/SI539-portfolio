@@ -562,7 +562,7 @@ footer{
     .container{
       /* change grid into 3 columns */
       display:grid;
-      grid-template-columns: 1fr 2fr 1fr;
+      grid-template-columns: 1fr 3fr 1fr;
       margin:auto;
       grid-column-gap: 0;
       grid-template-rows:repeat(4,300px);
