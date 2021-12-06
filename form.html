@@ -48,60 +48,62 @@
         
         <div class="parallax"></div>
         <div class="form_fill">
-          <form action="https://formspree.io/f/meqvbyze" method="POST">
+          <form action="https://formspree.io/f/mayvywpw" method="POST">
             <fieldset>
               <legend>Information collection form</legend>
               <span class="form_input">
                 Your name
               </span>
               <div class="form-floating">
-                <input type="name" class="form-control" id="floatname" placeholder="Real name is not required" required="required">
+                <input type="name" class="form-control" id="floatname" name="username" placeholder="Real name is not required" required="required">
                 <label for="floatname">Name</label>
               </div>
               <span class="form_input">
                 Your email
               </span>
               <div class="form-floating">
-                <input type="email" class="form-control" id="floatemail" placeholder="abc@example.com" required="required">
+                <input type="email" class="form-control" id="floatemail" name="Email" placeholder="abc@example.com" required="required">
                 <label for="floatemail">Email</label>
               </div>
               <span class="form_input">
                 Which page do you think is the best page?
               </span>
-              <select class="form-select" aria-label="Default select example">
+              <select class="form-select" aria-label="Default select example" name="best page">
                 <option selected>The best page</option>
-                <option value="ly">Queen's choice</option>
-                <option value="wd">Tears of Themis</option>
-                <option value="gy">Light and Night</option>
-                <option value="sh">For All Time</option>
+                <option value="queen's choice">Queen's choice</option>
+                <option value="tears of themis">Tears of Themis</option>
+                <option value="light and night">Light and Night</option>
+                <option value="for all time">For All Time</option>
               </select>
               <span class="form_input">
                 Which pages do you think have applealing pictures?
               </span>
+           
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheck1">
+                <input class="form-check-input" type="checkbox" value="queen's choice" id="flexCheck1"  name="appealing picture check">
                 <label class="form-check-label" for="flexCheck1">
                   Queen's choice
                 </label>
               </div>
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheck2">
+                <input class="form-check-input" type="checkbox" value="tears of themis" id="flexCheck2" name="appealing picture check">
                 <label class="form-check-label" for="flexCheck2">
                   Tears of Themis
                 </label>
               </div>
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheck3">
+                <input class="form-check-input" type="checkbox" value="light and night" id="flexCheck3" name="appealing picture check">
                 <label class="form-check-label" for="flexCheck3">
                   Light and Night
                 </label>
               </div>
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheck4">
+                <input class="form-check-input" type="checkbox" value="for all time" id="flexCheck4" name="appealing picture check">
                 <label class="form-check-label" for="flexCheck4">
                   For All Time
                 </label>
               </div>
+      
 
               <span class="form_input">
                 <label for="customRange1" class="form-label">How do you like the pages?</label><br>
@@ -109,17 +111,16 @@
               <span class="smallword">
                 Really bad
               </span class="form_input">
-              <input type="range" class="form-range" min="0" max="10" step="1" id="customRange1"  required="required">
+              <input type="range" class="form-range" min="0" max="10" step="1" id="customRange1"  name="page score" required="required">
               <span class="smallword">
                 Nice
               </span><br>
-
               <span class="form_input" id="messagel">
                 Leave a message
               </span><br>
               <div class="form-floating" id="messagebox">
                 <textarea class="form-control" placeholder="More comments" id="floatingTextarea2" style="height: 80px"></textarea>
-                <label for="floatingTextarea2">Message</label>
+                <label for="floatingTextarea2" name="message" >Message</label>
               </div>
               <section class="form_input">
                 <span>Do you think the pictures are good looking?</span><br>
