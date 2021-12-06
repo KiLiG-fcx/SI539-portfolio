@@ -30,7 +30,7 @@ a{
   padding: 6px;
   -webkit-transition: top 1s ease-out;
   transition: top 1s ease-out;
-  z-index: 1;
+  z-index: 11;
 
   /* Requirement 3a code here*/
   position:absolute;
@@ -40,14 +40,12 @@ a{
 /* Requirement 3b code here*/
 .skip a:focus{
   position: absolute;
-  top: 0px;
+  z-index: 13;
+top:40px; 
 }
 
 /* Requirement 4 code here*/
 
-:focus{
-  border:solid 2px;
-}
 /* end fonts */
 
 /* begin form settings */
@@ -64,13 +62,14 @@ a{
   background-size: contain;
 }
 .form_fill{
-  background-color:blanchedalmond;
+  background-color:whitesmoke;
 }
 .form_input{
   font-size:18px;
   color:black;
   font-family: 'Arapey',serif;
   padding:10px;
+  margin:15px;
 }
 form {
   border: 3px solid #f1f1f1;
@@ -90,31 +89,76 @@ textarea{
   box-sizing: border-box;
 }
 legend{ 
-  font-size: 125%;
-  font-style:italic;
-  text-transform: uppercase;
+  font-size:32px;
+  font-family: 'Murecho',serif;
+  font-weight: bolder;
   text-align: center;
 }
 label{
   display: inline-block;
   margin-right:10px;
   width:15%;
+  font-weight: bold;
 }
 input {
-  width: 100%;
+  width: 80%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
   border: 1px solid #ccc;
   box-sizing: border-box;
 }
-input:focus{
-  background-color: thistle;
+.yes{
+  position:relative;
+  margin:10px;
+  text-align: left;
+}
+/* bootstrap properties begin */
+.form-range{
+  width:50%;
+  margin-left:20px;
+  margin-right: 20px;
+}
+.form-select{
+  margin:20px;
+  width:20%;
+}
+.form-check{
+margin:20px;
+width:80%;
+}
+.form-floating{
+  width:70%;
+  margin:20px;
+}
+.form-floating label{
+  font-family: 'Murecho',serif;
+}
+.form-check-label{
+  margin-top:8px;
+  margin-left:10px;
 }
 input[type=radio]{
-margin:10px;
-align-items: flex-start;
+  width:1%;
+  margin:0;
 }
+.smallword{
+  font-weight: normal;
+  font-size:15px;
+  margin:20px;
+  font-family: 'Murecho',serif;
+}
+
+#messagel{
+  margin-top: 30px;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+#messagebox{
+  margin-top: 5px;
+}
+
+/*boot strap property ends */
 
 input[type=submit] {
   /* submit button */
@@ -140,6 +184,7 @@ input[type=submit]:hover {
 .list {
   position:relative;
   display:inline-block;
+  z-index:10;
 }
 .dropdown {
   background-color: black;
@@ -156,13 +201,12 @@ input[type=submit]:hover {
   position:absolute;
   background-color:#EEEEEE;
   width:260px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
 .options a {
   display:block;
   text-decoration:none;
   color:black;
-  padding:12px 15px;
+  padding:10px;
 }
 
 .list:hover .options {
@@ -203,6 +247,9 @@ from {
   animation-duration: 2s;
   animation-timing-function:ease-out;
 }
+#main_title{
+  background-color: black;
+}
 
 /* --------set main page grid--------- */
 .container{
@@ -213,12 +260,7 @@ from {
 .list{
   margin:5px 0 5px 0;
 }
-.click_for_more{
-  font-family: 'Courier New', Courier, monospace;
-  font-weight:bold;
-  text-decoration: underline;
-  color:black;
-}
+
 
 /* 1. propoganda pictures (displayed for all) */
 .show_picture{
@@ -491,14 +533,9 @@ footer{
       padding:0;
       width:100%;
     }
-    .list li:hover a{
-      background-color:wheat;
-      color:black;
-    }
     .list {
       width:100%;
     }
-    
     .options a {
       display:block;
       text-decoration:none;
@@ -506,10 +543,13 @@ footer{
       padding:7px;
       font-size: 16px;
     }
-    
     .list:hover .options {
       display:block;
     }
+    .options a:hover {
+      background-color:#DDDDDD;
+    }
+
 
     /*end navigation bar */
 
@@ -605,33 +645,23 @@ footer{
   ul a{
     background-color: #EEEEEE;
   }
-  .list{
-    width:100%;
-  }
   .options{
-    display:flex;
+    width:100%;
+    display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    padding: 0;
-    font-size: 16px;
-    box-shadow: none;
-    height:fit-content;
+    position:relative;
+    justify-content: space-between;
+    text-align: center;
+    background-color: #EEEEEE;
   }
-
   .list:hover .options {
     display:flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    padding: 0;
-    font-size: 16px;
-    box-shadow: none;
   }
-  .list li:hover a{
-    background-color:#EEEEEE;
-    text-decoration: underline 1px;
+  .options a:hover {
+    background-color:#DDDDDD;
   }
+
+
   /* end navigation bar from PC view */
 
   /* add flipcard */
@@ -686,6 +716,11 @@ footer{
 
   /* front side rotate */
   .flipcard1:hover .upper_side1 {
+		z-index: 900;
+		-webkit-transform: rotateY(179deg);
+		transform: rotateY(179deg);
+	}
+  .flipcard1:focus .upper_side1 {
 		z-index: 900;
 		-webkit-transform: rotateY(179deg);
 		transform: rotateY(179deg);
@@ -748,6 +783,24 @@ footer{
     height:500px;
     border-radius: 10px;
     margin:10px;
+    object-fit: cover;
+  }
+
+  /* larger character photo */
+  .character_info{
+    /* infomatoin grid */
+    display:grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    grid-template-rows: 300px;
+    margin: 10px 0 10px 0;
+  }
+  
+  .character_photo{
+    grid-column:1/span 1;
+    grid-row:1/span 1;
+    width:350px;
+    height:300px;
+    border-radius: 10px;
     object-fit: cover;
   }
 
