@@ -138,6 +138,10 @@ width:80%;
 .form-check-label{
   margin-top:8px;
   margin-left:10px;
+  width:100%;
+}
+.form-label{
+  width:100%;
 }
 input[type=radio]{
   width:1%;
