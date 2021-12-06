@@ -215,6 +215,8 @@ input[type=submit]:hover {
 }
 .options a:hover {
   background-color:#DDDDDD;
+  font-weight: bolder;
+  text-decoration: underline dashed 1px;
 }
 /* navigation bar (dropdown) end */
 
