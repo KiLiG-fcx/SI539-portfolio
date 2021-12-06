@@ -23,20 +23,30 @@ h3{
 a{
   font-family: 'Courier New', Courier, monospace;
 }
-.skip{
-  display:block;
-  text-align: center;
-  font-size: 18px;
-  color:black;
+
+.skip a{
+  background: white;
+  left: 0;
+  padding: 6px;
+  -webkit-transition: top 1s ease-out;
+  transition: top 1s ease-out;
+  z-index: 1;
+
+  /* Requirement 3a code here*/
+  position:absolute;
+  top:-40px;
 }
-.skip:visited{
-  color:black;
+
+/* Requirement 3b code here*/
+.skip a:focus{
+  position: absolute;
+  top: 0px;
 }
-#skip_main{
-  color:white;
-}
-#skip_main:visited{
-  color:white;
+
+/* Requirement 4 code here*/
+
+:focus{
+  border:solid 2px;
 }
 /* end fonts */
 
@@ -71,9 +81,9 @@ span{
 }
 
 textarea{
-  width: 100%;
+  width: 70%;
   height: 35vh;
-  padding: 12px 20px;
+  padding: 10px;
   margin: 8px 0;
   display: inline-block;
   border: 1px solid #ccc;
@@ -101,6 +111,11 @@ input {
 input:focus{
   background-color: thistle;
 }
+input[type=radio]{
+margin:10px;
+align-items: flex-start;
+}
+
 input[type=submit] {
   /* submit button */
   background-color: #31103C;
@@ -116,36 +131,48 @@ input[type=submit]:hover {
 }
 #score{
   width:50%;
-  
 }
 
 /* end form style */
 /* end parallax image */
 
-/* navigation bar */
-ul{
-  list-style:none
-}
-ul a{
-  display: block;
-  text-decoration: none;
+/* navigation bar, dropdown for small screen */
+.list {
   position:relative;
-  height:100%;
-  text-align: center;
-  color: thistle;
+  display:inline-block;
+}
+.dropdown {
   background-color: black;
-  }
-
-.list{
-  display:block;
-  padding:0;
+  color:white;
+  cursor:pointer;
+  font-size:20px;
+  font-family: 'Murecho',serif;
+  padding:8px;
   width:100%;
 }
-.list li:hover a{
-  background-color:thistle;
-  color:black;
+
+.options {
+  display:none;
+  position:absolute;
+  background-color:#EEEEEE;
+  width:260px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
-/* navigation bar end */
+.options a {
+  display:block;
+  text-decoration:none;
+  color:black;
+  padding:12px 15px;
+}
+
+.list:hover .options {
+  display:block;
+}
+.options a:hover {
+  background-color:#DDDDDD;
+}
+/* navigation bar (dropdown) end */
+
 p{
   /* intro text */
   font-family: sans-serif;
@@ -154,9 +181,8 @@ p{
   /* difference for current page */
   font-weight:bolder;
   text-decoration: underline;
-  color:white;
-  background-color: black;
   padding:0;
+  border:black 2px dashed;
 }
 
 @keyframes title_ani{
@@ -413,30 +439,28 @@ footer{
     margin: 8px;
     font-size:18px;
   }
-  /* end font settings for mobile */
-
-  /* ----------------------for internal pages---------------------------*/
-  /* general settings */
+  .official_pictures{
+    flex-direction: column;
+  }
   .official_pictures img{
+    margin: 10px auto 10px auto;
     flex-direction: column;
     max-width:350px;
     align-items: center;
   }
+  /* end font settings for mobile */
+
 }
 
-/*------------------------------------tablet view----------------------------------------- */
+/*--------------------------------------- tablet view ------------------------------------------- */
 @media only screen and (min-width: 768px){
   /* main page view */
     /* change font size */
     h1{
-      font-size:32px;
+      font-size:34px;
     }
     h2{
-      font-size:20px;
-    }
-    ul a{
-      font-size:18px;
-      color:white;
+      font-size:24px;
     }
     .main_intro{
       margin:10px;
@@ -446,6 +470,48 @@ footer{
       font-size:18px;
     }
     /* end font editing */
+
+    /* show the navigation bar as usual */
+    ul{
+      list-style:none;
+    }
+    ul a{
+      display: block;
+      text-decoration: none;
+      position:relative;
+      text-align: center;
+      background-color: white;
+      }
+    .dropdown{
+        display:none;
+    }
+    .options{
+      display:block;
+      position:relative;
+      padding:0;
+      width:100%;
+    }
+    .list li:hover a{
+      background-color:wheat;
+      color:black;
+    }
+    .list {
+      width:100%;
+    }
+    
+    .options a {
+      display:block;
+      text-decoration:none;
+      color:black;
+      padding:7px;
+      font-size: 16px;
+    }
+    
+    .list:hover .options {
+      display:block;
+    }
+
+    /*end navigation bar */
 
     .container{
       /* change grid into 3 columns */
@@ -512,19 +578,62 @@ footer{
     /* end picture settings */
 
     /* main page text settings */
+
+    /* change official picture direction and size */
+    .official_pictures{
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+
     .official_pictures img{
       max-width:350px;
-      flex-direction: row;
-      justify-content: space-evenly;
+      justify-content: space-around;
       margin-left:auto;
       margin-right:auto;
       margin-top:15px;
       margin-bottom: 15px;
     }
+    /* end official picture settings */
+    .fan_pictures p{
+      font-weight: normal;
+    }
 }
 
 /*--------------------------------------------- PC view ----------------------------------------------*/
 @media only screen and (min-width: 1280px){
+  /* navigation bar from PC view */
+  ul a{
+    background-color: #EEEEEE;
+  }
+  .list{
+    width:100%;
+  }
+  .options{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 0;
+    font-size: 16px;
+    box-shadow: none;
+    height:fit-content;
+  }
+
+  .list:hover .options {
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 0;
+    font-size: 16px;
+    box-shadow: none;
+  }
+  .list li:hover a{
+    background-color:#EEEEEE;
+    text-decoration: underline 1px;
+  }
+  /* end navigation bar from PC view */
+
   /* add flipcard */
   .flip_container{
     /* show the container for flipcard only on large screen */
@@ -706,5 +815,9 @@ footer{
   /* reduce parallax image */
   .parallax{
     background-attachment:scroll;
+  }
+  .main_title,.game_title{
+    /* set main title animation */
+    animation:none;
   }
  }

@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Sofia'>
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Sawarabi+Mincho'>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Murecho'>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-B034CQES62"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -20,19 +20,26 @@
    <title>Otome game gallery</title>
   </head>
   <body>
-    <header class="dropdown">
+    <header>
       <ul class="list">
-        <li class="curr"><a href="index.html">Main Page</a></li>
-        <li class="qc"><a href="mrlove.html">Mr. Love: Queen's choice</a></li>
-        <li class="tot"><a href="tearsofthemis.html">Tears of Themis</a></li>
-        <li class="ln"><a href="lightandnight.html">Light and Night</a></li>
-        <li class="fat"><a href="foralltime.html">For All Time</a></li>
-        <li class="form"><a href="form.html">Form page</a></li>
+        <button class="dropdown">
+          Menu
+        </button>
+        <div class="options">
+          <li class="curr"><a href="index.html">Main Page (Current page)</a></li>
+          <li class="qc"><a href="mrlove.html">Mr. Love: Queen's choice</a></li>
+          <li class="tot"><a href="tearsofthemis.html">Tears of Themis</a></li>
+          <li class="ln"><a href="lightandnight.html">Light and Night</a></li>
+          <li class="fat"><a href="foralltime.html">For All Time</a></li>
+          <li class="form"><a href="form.html">Form page</a></li>
+        </div>
       </ul>
     </header>
     <main>
       <h1 class="main_title">Otome Game Gallery</h1>
-      <a class="skip" id="skip_main" href="#sh_main_intro">Skip to last</a></li>
+      <div class="skip">
+        <a href="#sh_main_intro">View fan pictures</a></li>
+      </div>
       <div class="container">
         <img src="pic/ly_logo.png" alt="lylg" class="show_picture" id="lyp" >
         <div class="ly">
