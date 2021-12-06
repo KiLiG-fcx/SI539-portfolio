@@ -93,6 +93,7 @@ legend{
   font-family: 'Murecho',serif;
   font-weight: bolder;
   text-align: center;
+  margin:20px;
 }
 label{
   display: inline-block;
@@ -316,7 +317,7 @@ from {
 
 
 /* --------settings for internal pages----------- */
-.flip_container{
+.flip_container,.flip{
   display:none;
 }
 /*1. titles and whole background*/
@@ -695,6 +696,7 @@ footer{
   }
   .flip{
     /* text style of title */
+    display:block;
     font-family: 'Arapey',serif;
     color:black;
     text-align: center;
