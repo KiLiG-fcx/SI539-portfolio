@@ -465,14 +465,15 @@ footer{
   font-family: 'Times New Roman', Times, serif;
   margin:10px;
 }
+.tablet_picture, .additional_text_tablet{
+  /* do not show other pictures, or additional text */
+  display:none;
+}
 
 
 /*----------------------------------------mobile view---------------------------------------------*/
 @media only screen and (min-width: 400px){
-  .tablet_picture, .additional_text_tablet{
-    /* do not show other pictures, or additional text */
-    display:none;
-  }
+
 /* font settings for mobile */
   h1{
     text-align: center;
@@ -510,6 +511,7 @@ footer{
     .main_intro{
       margin:10px;
       font-size:18px;
+      overflow: hidden;
     }
     .whole_page p{
       font-size:18px;
@@ -559,7 +561,7 @@ footer{
     .container{
       /* change grid into 3 columns */
       display:grid;
-      grid-template-columns: 1fr 2fr 1fr;
+      grid-template-columns: 1fr 250px 1fr;
       margin:auto;
       grid-column-gap: 0;
       grid-template-rows:repeat(4,300px);
@@ -675,9 +677,7 @@ footer{
     justify-content: space-between;
     animation:anmt;
   }
-  @keyframes anmt{
-    
-  }
+
   .flipcard1,.flipcard2,.flipcard3,.flipcard4{
     /* two picture comtainer */
     display:flex;
@@ -794,7 +794,7 @@ footer{
   .character_info{
     /* infomatoin grid */
     display:grid;
-    grid-template-columns: 1.5fr 1fr 1fr;
+    grid-template-columns: 1.5fr 2fr 1fr;
     grid-template-rows: 300px;
     margin: 10px 0 10px 0;
   }
@@ -806,6 +806,7 @@ footer{
     height:300px;
     border-radius: 10px;
     object-fit: cover;
+    margin-left: 20px;
   }
 
 }
