@@ -24,6 +24,52 @@ a{
   font-family: 'Courier New', Courier, monospace;
 }
 
+/* video settings */
+.video{
+	display: block;
+	width: 80%;
+	margin: auto;
+  width:400px;
+  height:280px;
+  z-index:2;
+}
+.cover_page{
+  display: block;
+  position:absolute;
+	width: 80%;
+	margin: auto;
+  width:400px;
+  height:280px;
+  z-index:1;
+}
+.video_title{
+  font-size:24px;
+}
+.volume_adjust{
+  width:60%;
+  margin: auto;
+  font-family: 'Murecho',serif;
+}
+
+.video_options{
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width:50%;
+  margin:auto;
+}
+button{
+  background-color: black;
+  color:white;
+  font-size:16px;
+  font-family: 'Murecho',serif;
+  margin:8px;
+  box-shadow: whitesmoke;
+
+}
+/* end video settings */
+
 .skip a{
   background: white;
   left: 0;
@@ -31,20 +77,15 @@ a{
   -webkit-transition: top 1s ease-out;
   transition: top 1s ease-out;
   z-index: 11;
-
-  /* Requirement 3a code here*/
   position:absolute;
   top:-40px;
 }
 
-/* Requirement 3b code here*/
 .skip a:focus{
   position: absolute;
   z-index: 13;
-top:40px; 
+  top:40px; 
 }
-
-/* Requirement 4 code here*/
 
 /* end fonts */
 
@@ -345,6 +386,9 @@ from {
 #hlr{
   background-image: url('../pic/sh/back.jpg');
 }
+#video_page{
+  background-image: url('../pic/ly/back.jpg');
+}
 
 /* 1.2 titles */
 .game_title{
@@ -363,7 +407,7 @@ from {
   margin:20px 0 0 0;
   text-align: center;
 }
-.off_intro,.fan_intro,.character{
+.off_intro,.fan_intro,.character,.video_title{
   /*character title, picture titles */
   font-family: 'Arapey',serif;
   color:black;
@@ -505,6 +549,20 @@ footer{
 /*--------------------------------------- tablet view ------------------------------------------- */
 @media only screen and (min-width: 768px){
   /* main page view */
+  .video{
+    width:680px;
+    height:400px;
+  }
+  .cover_page{
+    width:680px;
+    height:400px;
+  }
+  .video_title{
+    font-size:28px;
+  }
+  .button{
+    font-size:18px;
+  }
     /* change font size */
     h1{
       font-size:34px;
@@ -650,6 +708,14 @@ footer{
 
 /*--------------------------------------------- PC view ----------------------------------------------*/
 @media only screen and (min-width: 1280px){
+  .video{
+    width:880px;
+    height:600px;
+  }
+  .cover_page{
+    width:880px;
+    height:600px;
+  }
   /* navigation bar from PC view */
   ul a{
     background-color: #EEEEEE;
