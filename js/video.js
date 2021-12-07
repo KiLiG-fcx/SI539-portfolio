@@ -26,12 +26,12 @@ document.querySelector("#play").addEventListener("click", function() {
 
  document.querySelector("#skipahead").addEventListener("click",function(){
 	console.log("Original location "+video.currentTime);
-	if (video.currentTime >= video.duration-10){
+	if (video.currentTime >= video.duration-2){
 		video.currentTime = 0;
 		video.play();
 	}
 	else {
-		video.currentTime += 10
+		video.currentTime += 2
 	}
  })
 
@@ -55,14 +55,14 @@ document.querySelector("#play").addEventListener("click", function() {
 function keyfunc(e){
     const key = e.code;
     if (key === 'ArrowLeft') {
-        video.currentTime -= 5;
+        video.currentTime -= 3;
         if (video.currentTime < 0) {
             video.pause();
             video.currentTime = 0;
     }
     } 
     else if (key === 'ArrowRight') {
-        video.currentTime += 5;
+        video.currentTime += 3;
         if (video.currentTime > video.duration) {
             video.pause();
             video.currentTime = 0;
