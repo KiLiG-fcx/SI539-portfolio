@@ -55,14 +55,14 @@ document.querySelector("#play").addEventListener("click", function() {
 function keyfunc(e){
     const key = e.code;
     if (key === 'ArrowLeft') {
-        video.currentTime -= 3;
+        video.currentTime -= 1;
         if (video.currentTime < 0) {
             video.pause();
             video.currentTime = 0;
     }
     } 
     else if (key === 'ArrowRight') {
-        video.currentTime += 3;
+        video.currentTime += 1;
         if (video.currentTime > video.duration) {
             video.pause();
             video.currentTime = 0;
